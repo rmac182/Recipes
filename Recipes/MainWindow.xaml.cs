@@ -30,9 +30,10 @@ namespace Recipes
             InitializeComponent();
             FocusManager.SetFocusedElement(this, txtTitle);
 
-            // When I add an item to the list(ingredients) here, It shows up on the list box it is binded too but.... (see line )
+            // When I add an item to the list(ingredients) here, It shows up on the list box it is binded too but.... (see line 66)
             ingredients.Add(new Ingredient { Amount = "AMOUNT", IngName = "INGREDIENT" });
-            
+            ingredients.Add(new Ingredient { Amount = "6 cups", IngName = "Coffee" });
+
             lbIngredients.ItemsSource = ingredients;
             
         }
