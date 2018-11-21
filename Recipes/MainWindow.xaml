@@ -12,28 +12,28 @@
 
    
 
-        <StackPanel Name="appPanel">
+        <StackPanel x:Name="appPanel">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Name="inputPanel">
-                <StackPanel Name="titlePanel" Margin=" 5">
+            <StackPanel x:Name="inputPanel">
+                <StackPanel x:Name="titlePanel" Margin=" 5">
                     <StackPanel Margin="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <TextBlock Name="lblTitle"  Width="75">
+                        <TextBlock x:Name="lblTitle"  Width="75">
                             Recipe Title: <Run Foreground="Red">*</Run>
                         </TextBlock>
                         <TextBox x:Name="txtTitle" Margin="3" Width="195"  Height="20"/>
                     </StackPanel>
                     <StackPanel  Margin="3" Orientation="Horizontal" HorizontalAlignment="Stretch" >
-                        <TextBlock Name="lblName" Width="75">
+                        <TextBlock x:Name="lblName" Width="75">
                             Written By: <Run Foreground="Red">*</Run>
                         </TextBlock>
                         <TextBox x:Name="txtName" Margin="3" Width="195"  Height="20"/>
                     </StackPanel>
                     <StackPanel Height="25" Width="250" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <CheckBox Name="chkBoxOption" Margin="5">Format Title</CheckBox>
+                        <CheckBox x:Name="chkBoxOption" Margin="5">Format Title</CheckBox>
                         <Button Padding="5,0,5,0" BorderBrush="LightSlateGray" Click="Button_Click">Update Title</Button>
                     </StackPanel>
 
@@ -42,19 +42,19 @@
 
 
 
-                <StackPanel Name="ingredientPanel" Margin="5">
+                <StackPanel x:Name="ingredientPanel" Margin="5">
                     <StackPanel Margin="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <TextBlock Name="lblIngredient" Width="75">Ingredient:
+                        <TextBlock x:Name="lblIngredient" Width="75">Ingredient:
                             <Run Foreground="Red">*</Run>
                         </TextBlock>
                         <TextBox x:Name="txtIngredient" Margin="3" Width="195"  Height="20"/>
                     </StackPanel>
                     <StackPanel  Margin="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <TextBlock Name="lblAmount" Width="75">Amount: <Run Foreground="Red">*</Run></TextBlock>
-                        <TextBox Name="txtAmount" Margin="3" Width="70" Height="20"/>
-                        <Button Name="btnAddIngredient" Margin="3,0,0,0" Padding="5,0,5,0" Click="BtnAddIngredient_Click">Add</Button>
-                        <Button Name="btnEditIngredient" Margin="3,0,0,0" Padding="5,0,5,0" Click="BtnEditIngredient_Click">Edit</Button>
-                        <Button Name="btnDelIngredient" Margin="3,0,0,0" Padding="5,0,5,0" Click="BtnDelIngredient_Click">Delete</Button>
+                        <TextBlock x:Name="lblAmount" Width="75">Amount: <Run Foreground="Red">*</Run></TextBlock>
+                        <TextBox x:Name="txtAmount" Margin="3" Width="70" Height="20"/>
+                        <Button x:Name="btnAddIngredient" Margin="3,0,0,0" Padding="5,0,5,0" Click="BtnAddIngredient_Click">Add</Button>
+                        <Button x:Name="btnEditIngredient" Margin="3,0,0,0" Padding="5,0,5,0" Click="BtnEditIngredient_Click">Edit</Button>
+                        <Button x:Name="btnDelIngredient" Margin="3,0,0,0" Padding="5,0,5,0" Click="BtnDelIngredient_Click">Delete</Button>
                         
                     </StackPanel>
                    
@@ -63,19 +63,20 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Name="outputPanel" Width="250" Height="400">
+            <StackPanel Grid.Column="1" x:Name="outputPanel" Width="250" Height="400">
                 <StackPanel>
                     <TextBlock x:Name="recTitleName" Margin=" 5" Width="250" Height="80" HorizontalAlignment="Stretch" Background="WhiteSmoke"/>
                 </StackPanel>
                 <StackPanel>
-                    <ListBox Name="lbIngredients" Margin=" 5"  MinHeight="80" HorizontalContentAlignment="Stretch">
+                    <ListBox x:Name="lbIngredients" Margin=" 5"  MinHeight="80" HorizontalContentAlignment="Stretch">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Name="txtListAmount" HorizontalAlignment="Center" Text="{Binding Amount}"/>
+                                    <TextBlock x:Name="txtListAmount" HorizontalAlignment="Center" Text="{Binding Amount}" />
                                     <TextBlock> - </TextBlock>
-                                    <TextBlock Name="txtListIngredient" HorizontalAlignment="Center" Text="{Binding IngName}"/>
+                                    <TextBlock x:Name="txtListIngredient" HorizontalAlignment="Center" Text="{Binding IngName}"/>
+                                    
                                 </StackPanel>
 
                             </DataTemplate>
@@ -97,6 +98,7 @@
     </StackPanel>
 
 </Window>
+                                    
 
             
                

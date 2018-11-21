@@ -8,12 +8,17 @@ namespace Recipes
 {
     public class Ingredient
     {
+
+        
         public string IngName { get; set; }
         public string Amount { get; set; }
 
 
+        public override string ToString()
+        {
+            return $"{Amount} - {IngName}";
+        }
 
-       
 
     }
 }

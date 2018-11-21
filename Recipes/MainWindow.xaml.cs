@@ -30,12 +30,6 @@ namespace Recipes
             InitializeComponent();
             FocusManager.SetFocusedElement(this, txtTitle);
 
-            // When I add an item to the list(ingredients) here, It shows up on the list box it is binded too but.... (see line 66)
-            ingredients.Add(new Ingredient { Amount = "AMOUNT", IngName = "INGREDIENT" });
-            
-
-            lbIngredients.ItemsSource = ingredients;
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -60,16 +54,16 @@ namespace Recipes
 
         private void BtnAddIngredient_Click(object sender, RoutedEventArgs e)
         {
-            if (txtAmount.Text != "" && txtIngredient.Text != "")
+            if (txtAmount.Text != null && txtIngredient.Text != null)
             {
-                
-                 //...When the user adds am ingredient using this method here,  NOTHING!!!! Why???!!
-                ingredients.Add(new Ingredient { Amount = txtAmount.Text, IngName = txtIngredient.Text });
-                // I know it adds it because....
-                MessageBox.Show(ingredients[0].Amount + " " + ingredients[0].IngName + "\n" + ingredients[1].Amount + " " + ingredients[1].IngName);
 
-                txtIngredient.Text = "";
-                txtAmount.Text = "";
+               
+                ingredients.Add(new Ingredient { Amount = txtAmount.Text, IngName = txtIngredient.Text });
+                txtAmount.Text = null;
+                txtIngredient.Text = null;
+                
+                lbIngredients.ItemsSource = ingredients;
+
             }
             else
             {
@@ -91,6 +85,11 @@ namespace Recipes
        
     }
 }
+
+                
+
+
+
 
                 
                 
